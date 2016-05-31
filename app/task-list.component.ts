@@ -9,14 +9,13 @@ import { EditTaskDetailsComponent } from './edit-task-details.component';
   outputs: ['onTaskSelect'],
   directives: [TaskComponent, EditTaskDetailsComponent],
   template: `
-  <task-display *ngFor="#currentTask of taskList"
-    (click)="taskClicked(currentTask)"
-    [class.selected]="currentTask === selectedTask"
-    [task]="currentTask">
-  </task-display>
-  <edit-task-details *ngIf="selectedTask" [task]="selectedTask">
-  </edit-task-details>
-  `
+    <task-display *ngFor="#currentTask of taskList"
+      (click)="taskClicked(currentTask)"
+      [class.selected]="currentTask === selectedTask"
+      [task]="currentTask">
+    </task-display>
+    <edit-task-details *ngIf="selectedTask" [task]="selectedTask"></edit-task-details>
+    `
 })
 export class TaskListComponent {
   public taskList: Task[];
